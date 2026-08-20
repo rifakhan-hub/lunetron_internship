@@ -1,0 +1,220 @@
+--------------------------------Pandas -------------------------
+
+What is Pandas?
+Pandas is a popular Python library used for data analysis and data manipulation.
+In simple words:
+Pandas helps you work with data stored in tables, similar to Excel spreadsheets, but using Python.
+
+You can use Pandas to:
+•	Read data from CSV, Excel, SQL, JSON, etc. 
+•	Clean missing or incorrect data 
+•	Filter and sort data 
+•	Add or remove columns 
+•	Calculate statistics 
+•	Group and summarize data 
+•	Merge different datasets 
+•	Prepare data for Machine Learning 
+•	Analyze real-world business data
+
+
+Applications of Pandas
+Pandas is mainly used wherever we need to collect, clean, transform, analyze, and understand structured data.
+
+1.  Data Analysis
+Pandas is heavily used to analyze business data.
+
+Real-world example:
+A company has sales data and wants to know:
+•	Total sales 
+•	Average sales 
+•	Best-selling product 
+•	Best-performing city 
+•	Monthly revenue
+
+
+2.  Data Cleaning
+Real-world data is often messy.
+Real-world use: Cleaning customer, employee, hospital, or sales datasets before analysis.
+
+3.  Reading and Writing Data
+Pandas can work with many common data formats.
+
+4.  Banking & Finance
+Banks can use Pandas to analyze:
+•	Transactions 
+•	Customer spending 
+•	Loans 
+•	Credit data 
+•	Financial performance 
+•	Fraud-related patterns
+
+5.  E-commerce
+Companies like online marketplaces can analyze:
+This tells the company which products generate the most revenue.
+
+6.  Healthcare
+Pandas can be used to analyze:
+•	Patient records 
+•	Hospital admissions 
+•	Medical test results 
+•	Treatment statistics 
+•	Hospital expenses
+
+7.  Machine Learning
+Pandas is commonly used before training a Machine Learning model.
+
+CSV Dataset
+     ↓
+Pandas
+     ↓
+Data Cleaning
+     ↓
+Data Transformation
+     ↓
+Feature Selection
+     ↓
+Scikit-learn
+     ↓
+Machine Learning Model
+
+
+
+Type of file in pandas using max.
+
+ CSV (.csv) — most common for tabular data
+pd.read_csv("data.csv") 
+ Excel (.xlsx) — spreadsheets
+pd.read_excel("data.xlsx") 
+JSON (.json) — web/API data
+pd.read_json("data.json") 
+SQL (.db, .sqlite) — database data
+pd.read_sql(query, connection)
+
+
+
+ 
+Think of a Pandas table like an Excel sheet:
+Name	Age	City
+Rahul	20	Delhi
+Priya	21	Lucknow
+1. Column ↕️
+A column goes from top to bottom.
+•	Name = one column 
+•	Age = one column 
+•	City = one column 
+2. Row ↔️
+A row goes from left to right.
+•	Rahul | 20 | Delhi = one row 
+•	Priya | 21 | Lucknow = one row 
+3. Cell 
+A cell is one individual box/value where a row and column meet.
+For example:
+20 is a cell.
+It is at the intersection of the Age column and Rahul's row.
+Easy memory 
+Column = vertical
+Row = horizontal
+Cell = one box/value
+
+ 
+Install Pandas
+pip install pandas
+
+Check the installation:
+import pandas as pd
+print(pd.__version__)
+
+#pd is simply an alias for Pandas.
+
+What is a DataFrame?
+The most important concept in Pandas is the DataFrame.
+Think of a DataFrame as an Excel spreadsheet inside Python.
+For example:
+Name	Age	City	Salary
+Rahul	25	Delhi	40000
+Priya	28	Mumbai	50000
+Amit	24	Pune	35000
+Ex---
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit"],
+    "Age": [25, 28, 24],
+    "City": ["Delhi", "Mumbai", "Pune"],
+    "Salary": [40000, 50000, 35000]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+Selecting a Row----
+Use .iloc.
+print(df.iloc[0])
+
+print(df.iloc[1])
+
+
+Selecting Multiple Rows-----
+print(df.iloc[0:2])
+
+Filtering Data----------------
+his is one of the most important Pandas concepts.
+Suppose the company wants employees whose salary is greater than ₹40,000.
+
+result = df[df["Salary"] > 40000]
+
+print(result)
+
+Basic DataFrame Information----------------
+Number of rows and columns
+
+print(df.shape)
+
+Column names—
+print(df.columns)
+
+Data types---
+print(df.dtypes)
+
+Important Inspection Commands
+
+When you receive a new dataset, don't immediately start analyzing it.
+First inspect it.
+df.head()
+
+df.info()
+
+df.describe()
+
+
+Pandas Coding Practice — 20 Question
+  Write Python code to import Pandas using the alias pd and print its version. 
+  Create a Pandas DataFrame using employee data with columns: Name, Age, City, and Salary. 
+ Write code to display the complete DataFrame. 
+ Write code to display the first 3 rows of a DataFrame. 
+  Write code to display the last 2 rows of a DataFrame. 
+ Write code to display all column names of a DataFrame. 
+ Write code to find the number of rows and columns using shape.
+Write code to select only the Name column. 
+ Write code to select the Name and Salary columns. 
+ Write code to display the first row using .iloc. 
+ Write code to display the first 3 rows using .iloc. 
+  Write code to display employees whose salary is greater than ₹40,000. 
+ Write code to display employees whose age is greater than or equal to 28. 
+  Write code to display employees whose age is greater than or equal to 25 and salary is greater than or equal to ₹50,000.
+Write code to display employees who are from Delhi. 
+Write code to display only Name, City, and Salary for employees whose salary is greater than ₹40,000. 
+Write code to display the data type of every column using dtypes. 
+Write code to generate a statistical summary of all numerical columns using describe(). 
+Write code to read an employees.csv file and display its first 5 rows, shape, columns, data types, and statistical summary. 
+Create an employee DataFrame and write a program to: 
+•	Display employees earning more than ₹50,000 
+•	Display employees from Delhi 
+•	Display only Name and Salary 
+•	Display employees older than 25 
+•	Display employees with salary between ₹40,000 and ₹60,000 
+•	Display the first 3 rows 
+•	Display the last 2 rows 
+•	Display the DataFrame shape 
+•	Display the statistical summary
+

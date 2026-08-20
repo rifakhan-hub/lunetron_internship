@@ -13,3 +13,16 @@ df = pd.DataFrame(data)
 
 print(df)
 print(df.iloc[0])
+print(df.iloc[0:2])
+
+result = df[df["Salary"] > 10000]
+print(result)
+
+print(df.shape)
+print(df.dtypes)
+
+
+print(df.head(1))
+print(df.tail(1))
+
+print(df.describe)
