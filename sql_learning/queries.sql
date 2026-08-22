@@ -27,6 +27,34 @@ SELECT * FROM students;     -- display all from table
 SELECT names, course FROM students;         -- to display particular rows
 
 SELECT * FROM students WHERE id > 2;        -- display column with conditions
+SELECT names FROM students WHERE course = 'CSE';
 
+UPDATE students
+SET age = 20 
+WHERE names = 'Dev';
+
+DELETE FROM students WHERE id = 5;
+
+-- adding a column
+ALTER TABLE students
+ADD email VARCHAR(50);
+
+-- to update single value
+UPDATE students
+SET email = "abc@ex.com"
+WHERE id = 1;
+
+-- to update multiple value in same column
+UPDATE students
+SET email = CASE id
+    WHEN 2 THEN "pqr@ex.com"
+    WHEN 3 THEN "xyz@ex.com"
+END
+WHERE id IN (2,3);   -- due to workbench safe mode need to put where condtion
+
+ALTER TABLE students
+RENAME COLUMN course TO subject;
+
+DESCRIBE students;
 
 
