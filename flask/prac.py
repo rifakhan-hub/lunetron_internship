@@ -51,11 +51,16 @@ def get_students(id):
         if student["id"] == id:
             return jsonify(student)
 
+    return jsonify({"error": "Student not found"}), 404    
+
 # creating a post method
 
 @app.route("/student", methods=["POST"])
 def post_student():
-    return()
+    data = request.json
+    students.append(data)
+    return jsonify(data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
