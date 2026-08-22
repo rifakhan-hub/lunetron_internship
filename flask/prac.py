@@ -27,7 +27,7 @@ def get_students(id):
     #     "sub": ["math", "science", "math", "english"],
     #     "age": [10, 12, 11, 10]
     # }
-    "students"=[
+    students=[
         {
         "id": 1,
         "name": "Riya",
