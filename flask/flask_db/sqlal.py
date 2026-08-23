@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 
 # Create the Flask application
@@ -59,6 +59,33 @@ def get_student(id):
         )
 
     return jsonify({"error": "student not found"}), 404
+
+@app.route("/student", methods=["POST"])
+def add_student():
+
+    data = request.json
+
+    student = Student(
+        names = data["names"],
+        age = data["age"],
+        subject=data["subject"],
+        email=data["email"]
+    )
+
+    db.session.add(student)
+    db.session.commit()
+
+    return jsonify ({
+        "message": "student added successfully",
+        "student": {
+            "id": student.id,
+            "names": student.names,
+            "age": student.age,
+            "subject": student.subject,
+            "email": student.email
+        }
+    
+    }), 201
 
 if __name__=="__main__":
     app.run(debug=True)    
