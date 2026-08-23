@@ -60,4 +60,30 @@ DESCRIBE students;
 ALTER TABLE students
 MODIFY id INT NOT NULL auto_increment;
 
+DELETE FROM students
+WHERE id = 8;
+
+
+
+ALTER TABLE students
+ADD course_id INT;
+
+ALTER TABLE students
+ADD CONSTRAINT fk_student_course
+FOREIGN KEY (course_id)
+REFERENCES courses(id);
+
+UPDATE students
+SET course_id = CASE subject
+    WHEN "AIML" THEN 1
+    WHEN "CSE" THEN 2
+    WHEN "Cyber" THEN 4
+END
+WHERE id > 0
+  AND subject IN ("AIML", "CSE", "Cyber");
+
+ALTER TABLE students
+DROP COLUMN subject;
+
+describe students;
 
