@@ -24,7 +24,7 @@ VALUES
 
 SELECT * FROM students;     -- display all from table
 
-SELECT names, course FROM students;         -- to display particular rows
+SELECT names, course FROM students;         -- to display particular rowsstudents
 
 SELECT * FROM students WHERE id > 2;        -- display column with conditions
 SELECT names FROM students WHERE course = 'CSE';
@@ -56,5 +56,8 @@ ALTER TABLE students
 RENAME COLUMN course TO subject;
 
 DESCRIBE students;
+
+ALTER TABLE students
+MODIFY id INT NOT NULL auto_increment;
 
 

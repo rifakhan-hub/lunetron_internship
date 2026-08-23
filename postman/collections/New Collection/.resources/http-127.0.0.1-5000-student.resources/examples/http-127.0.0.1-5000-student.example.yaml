@@ -1,0 +1,41 @@
+$kind: http-example
+name: http://127.0.0.1:5000/student
+request:
+  url: http://127.0.0.1:5000/student
+  method: POST
+  body:
+    type: json
+    content: "{\r
+
+      \    \"names\": \"Arya\",\r
+
+      \    \"age\": 20,\r
+
+      \    \"subject\": \"AIML\",\r
+
+      \    \"email\": \"arya@example.com\"\r
+
+      }"
+response:
+  statusCode: 201
+  statusText: CREATED
+  headers:
+    server: Werkzeug/3.1.8 Python/3.12.10
+    date: Sun, 23 Aug 2026 07:08:53 GMT
+    content-type: application/json
+    content-length: "170"
+    connection: close
+  body:
+    type: json
+    content: |-
+      {
+        "message": "student added successfully",
+        "student": {
+          "age": 20,
+          "email": "arya@example.com",
+          "id": 8,
+          "names": "Arya",
+          "subject": "AIML"
+        }
+      }
+order: 1787468968436

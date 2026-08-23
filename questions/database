@@ -1,0 +1,258 @@
+------------------------------------------------database--------------------------------------------------------------
+What is data?
+Data" is simply information — raw facts, figures, or values that can be stored, processed, and used to gain understanding or make decisions.
+
+In everyday terms
+Data is anything that represents a fact about the world:
+•	Your name: "Rohan Gupta"
+•	Your age: 25
+•	Today's date: 2026-08-10
+•	A temperature reading: 32.5°C
+
+Database Type -------------------------------------------------------------
+1. Relational (SQL) Databases
+Data stored in tables with rows and columns, connected via keys. Follows a strict schema.
+•	Examples: MySQL, PostgreSQL, Oracle, SQL Server, SQLite
+
+SQL example based on a real-world project/scenario,
+e-commerce order management system.
+
+==data interchange/markup formats, each suited to different jobs.
+
+
+2. NoSQL Databases — these split into several sub-types:
+•	Document databases — store data as JSON-like documents, flexible schema 
+o	Examples: MongoDB, CouchDB
+•	Key-Value stores — simplest model, data stored as key-value pairs 
+o	Examples: Redis, DynamoDB
+•	Column-family (wide-column) stores — optimized for large-scale, sparse data 
+o	Examples: Cassandra, HBase
+•	Graph databases — data stored as nodes and relationships, ideal for connected data (social networks, recommendations) 
+o	Examples: Neo4j, ArangoDB
+What is SQL?
+SQL = Structured Query Language
+SQL is used to create, store, retrieve, update, and delete data in relational databases such as MySQL, PostgreSQL, Oracle, and SQL Server.
+
+MySQL was originally developed by Michael Widenius, David Axmark, and Allan Larsson in the 1990s, released by MySQL AB, acquired by Sun Microsystems in 2008, and became part of Oracle after Oracle acquired Sun in 2010.
+
+1. Download MySQL
+Go to the official MySQL website:
+Download MySQL Installer for Windows
+Choose MySQL Installer for Windows.
+You will usually see two options:
+•	Web Installer — smaller download; downloads components during installation. 
+•	Full Installer — larger download; useful if you want to install without downloading everything again. 
+For most users, choose Web Installer.
+2. Start the installation
+Run the downloaded .msi file.
+When the installer asks for setup type, select:
+Developer Default
+This is recommended if you're learning/developing with MySQL because it installs:
+•	MySQL Server 
+•	MySQL Workbench 
+•	MySQL Shell 
+•	MySQL connectors and development tools 
+Then click Next.
+3. Install the required components
+The installer will check for prerequisites.
+Click:
+Execute → Next
+Wait for all components to install.
+4. Configure MySQL Server
+When you reach Type and Networking:
+•	Configuration Type: Development Computer 
+•	Connectivity: TCP/IP 
+•	Port: 3306 
+•	Open Windows Firewall port: normally leave enabled 
+Click Next.
+5. Create your MySQL password
+You will see Authentication Method.
+For a modern installation, use:
+Use Strong Password Encryption
+Then create a password for the MySQL root user.
+For example:
+MySQL@12345
+Remember this password. You'll need it when connecting through Python, Django, MySQL Workbench, etc.
+Click Next.
+6. Windows Service
+Keep the default settings:
+Configure MySQL Server as a Windows Service
+Service Name: MySQL80
+Start the MySQL Server at System Startup
+Click Next → Execute.
+Wait until the configuration finishes.
+7. Open MySQL Workbench
+After installation, open Windows Start and search:
+MySQL Workbench
+Open it.
+You should see something similar to:
+MySQL Connections
+
+Local instance MySQL80
+Click it and enter the password you created.
+
+8. Test MySQL
+Inside MySQL Workbench, open a new SQL tab and run:
+CREATE DATABASE testdb;
+Then:
+SHOW DATABASES;
+You should see:
+information_schema
+mysql
+performance_schema
+sys
+testdb
+That means MySQL is installed and working.
+9. Check from Windows CMD
+Open Command Prompt and type:
+mysql --version
+You should get something like:
+mysql  Ver 8.0.xx for Win64
+If Windows says:
+'mysql' is not recognized...
+
+Importance of SQL-------------------------------------------
+1. Used in backend development
+Python applications using Django, Flask, or FastAPI commonly interact with SQL databases.
+Python Application
+       ↓
+SQL / ORM
+       ↓
+MySQL / PostgreSQL
+       ↓
+Database
+2. Essential for data analysis
+Data analysts use SQL to retrieve and analyze data before working with tools such as:
+Python
+Pandas
+Power BI
+Tableau
+Excel
+
+3. Important for web applications
+Applications such as:
+•	E-commerce 
+•	Banking 
+•	Hospital management 
+•	Education platforms 
+•	Inventory systems 
+•	Social media
+often use relational databases and SQL.
+
+4. Helps maintain data integrity
+Constraints and relationships help prevent incorrect or inconsistent data.
+5. Important career skill
+SQL is commonly required for roles such as:
+•	Python Backend Developer 
+•	Django Developer 
+•	Data Analyst 
+•	Data Engineer 
+•	Software Developer 
+•	Business Analyst 
+•	Database Developer 
+
+----------------------------------MySQL Constraints -----------------------------------------------------------
+There are 6 main constraints you should learn:
+Constraint	Purpose
+PRIMARY KEY	Uniquely identifies each row
+FOREIGN KEY	Creates a relationship between tables
+NOT NULL	Prevents empty/NULL values
+UNIQUE	Prevents duplicate values
+CHECK	Ensures a condition is satisfied
+DEFAULT	Provides a default value
+
+
+1. DDL — Data Definition Language
+Used to create or change the structure of database objects.
+Command	Purpose
+CREATE	Create database/table
+ALTER	Modify table structure
+DROP	Delete table/database
+TRUNCATE	Remove all records
+Example:
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50)
+);
+
+2. DML — Data Manipulation Language
+Used to insert, modify, and delete data.
+Command	Purpose
+INSERT	Add data
+UPDATE	Modify data
+DELETE	Delete data
+
+INSERT INTO students VALUES (1, 'Rahul');
+
+3. DQL — Data Query Language
+Used to retrieve/read data.
+Command	Purpose
+SELECT	Retrieve data
+Example:
+SELECT * FROM students;
+Some books combine SELECT with DML, but DQL is commonly taught separately.
+
+4. DCL — Data Control Language
+Used to control user permissions/access.
+Command	Purpose
+GRANT	Give permission
+REVOKE	Remove permission
+Example:
+GRANT SELECT ON school.students TO 'user1';
+
+5. TCL — Transaction Control Language
+Used to manage transactions.
+Command	Purpose
+COMMIT	Save changes
+ROLLBACK	Undo changes
+SAVEPOINT	Create a point to roll back to
+
+Example:
+START TRANSACTION;
+
+UPDATE students
+SET name = 'Amit'
+WHERE id = 1;
+
+COMMIT;
+
+Easy way to remember
+DDL → Structure
+DML → Modify Data
+DQL → Query Data
+DCL → Permissions
+TCL → Transactions
+
+
+ 
+SQL  Practice Questions
+1.	Create a database named school. 
+2.	Select the school database for use. 
+3.	Create a table named students with: 
+o	id 
+o	name 
+o	age 
+o	course 
+4.	Display all tables in the current database. 
+5.	Display the structure of the students table. 
+6.	Insert one student record into the students table. 
+7.	Insert 5 student records into the table. 
+8.	Display all records from the students table. 
+9.	Display only the name and course columns. 
+10.	Find students whose age is greater than 20. 
+11.	Find students who are enrolled in the Python course. 
+12.	Update the course of a student whose id is 3. 
+13.	Update the age of a student whose name is Rahul. 
+14.	Delete the student whose id is 5. 
+15.	Add a new column called email to the students table. 
+16.	Rename the course column to subject. 
+17.	Delete all records from the students table using TRUNCATE. 
+18.	Delete the students table completely using DROP. 
+19.	Create a new database named company and create an employees table inside it. 
+20.	Write a query to display employees whose salary is greater than 30,000.
+
+Hint 
+DDL → CREATE, ALTER, DROP, TRUNCATE
+DML → INSERT, UPDATE, DELETE
+DQL → SELECT
+WHERE → Filtering records

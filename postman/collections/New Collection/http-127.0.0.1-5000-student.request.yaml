@@ -1,0 +1,20 @@
+$kind: http-request
+name: http://127.0.0.1:5000/student
+description: ""
+url: http://127.0.0.1:5000/student
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"names\": \"Arya\",\r
+
+    \    \"age\": 20,\r
+
+    \    \"subject\": \"AIML\",\r
+
+    \    \"email\": \"arya@example.com\"\r
+
+    }"
+examples: .resources/http-127.0.0.1-5000-student.resources/examples
+order: 3537009362798619
