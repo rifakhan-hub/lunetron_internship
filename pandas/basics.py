@@ -1,3 +1,5 @@
+# pandas_env/Scripts/activate
+
 import pandas as pd 
 
 print(pd.__version__)

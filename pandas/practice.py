@@ -17,21 +17,31 @@ df = pd.read_csv("data.csv")
 
 # print(df.sort_values('Duration', ascending=False))
 
-# basic filtering 
+# # basic filtering 
 
-print(df[(df["Duration"]>50) & (df["Pulse"]>110)])
-print(df[(df["Calories"]>400)&(df["Maxpulse"]>140)])
+# print(df[(df["Duration"]>50) & (df["Pulse"]>110)])
+# print(df[(df["Calories"]>400)&(df["Maxpulse"]>140)])
 
-# filtering + selecting column
+# # filtering + selecting column
 
-data = df[df["Calories"]>400]
-print(data.loc[:,["Date", "Calories"]])
+# data = df[df["Calories"]>400]
+# print(data.loc[:,["Date", "Calories"]])
 
-print(df.loc[df["Pulse"]>110, ["Date", "Pulse", "Maxpulse"]])
+# print(df.loc[df["Pulse"]>110, ["Date", "Pulse", "Maxpulse"]])
 
-print(df.loc[(df["Pulse"]>110)& (df["Calories"]>400), ["Date", "Pulse", "Calories"]])
+# print(df.loc[(df["Pulse"]>110)& (df["Calories"]>400), ["Date", "Pulse", "Calories"]])
 
-# isin() - selcting multiple values
-print(df[ df["Pulse"].isin([103, 110, 117])])
+# # isin() - selcting multiple values
+# print(df[ df["Pulse"].isin([103, 110, 117])])
 
-print(df[ (df["Duration"].isin([45, 60])) & (df["Calories"]>400)] )
+# print(df[ (df["Duration"].isin([45, 60])) & (df["Calories"]>400)] )
+
+# sorting
+
+print(df.sort_values("Calories"))
+print(df.sort_values("Calories", ascending=False))
+print (df.sort_values(["Pulse", "Calories"]))
+
+# adding column
+
+df["Caloriespm"] = df["Calories"]/df["Duration"]
