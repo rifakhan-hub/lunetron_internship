@@ -13,3 +13,5 @@ new_df = new_df[["Name", "Phone", "Emails"]]
 new_df = new_df.drop_duplicates()
 
 print(new_df)
+
+new_df.to_csv("cleaned_data.csv", index=False)
