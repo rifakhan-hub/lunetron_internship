@@ -26,3 +26,22 @@ print(b.ndim)
 print(a.size)
 print(b.size)
 print(b.dtype)
+
+# indexing and slicing
+
+a[0]   # first element
+a[-1]  # last element
+a[1:4]  # from index 1 to 3
+a[: 3]  # first 3 elements
+a[::2]  # every second element
+
+b[0, 0]     # 1 row 0, column 0
+b[1, :]     # entire row 1 
+b[:, 2]     # entire column 2
+b[0:2, 0:2]     # top left 2x2 block
+
+# conditional
+
+a[a>2]      # elements greater than 2
+a[a%3 == 0]     # elements divisible by 3
+a[a > 3] = 1    # replace all elements greater than 3 with 1
