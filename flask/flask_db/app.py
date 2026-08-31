@@ -6,6 +6,11 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///students.db"
 
+# sqlite      → database type
+# :///        → local database
+# students.db → database file
+
+
 db = SQLAlchemy(app)
 
 
