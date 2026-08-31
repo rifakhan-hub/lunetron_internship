@@ -45,3 +45,48 @@ b[0:2, 0:2]     # top left 2x2 block
 a[a>2]      # elements greater than 2
 a[a%3 == 0]     # elements divisible by 3
 a[a > 3] = 1    # replace all elements greater than 3 with 1
+
+
+# array operations/ vectorization
+
+a = np.array([1, 2, 3]) 
+b = np.array([4, 5, 6])
+print([(a+b), (a-b), (a*b), (a/b)])  # element wise operation
+print(a**2)
+
+np.sqrt(b)      # square root of each element 
+np.exp(a)       # e^x for each element 
+np.log(a)       # natural log of each element 
+np.abs(-a)      # absolute value
+
+a = np.array([[1, 2, 3], [4, 5, 6]])
+
+print(a.sum())         # sum of all elements
+print(a.sum(axis=0))   # sum down each column
+print(a.sum(axis=1))   # sum across each row
+
+print(a.mean())
+print(a.max())
+print(a.min())
+print(a.std())      # standard deviation
+print(a.argmax())   # index of max value
+
+
+# Reshaping Arrays
+
+x = np.arange(12)   # an array of 12 element
+
+print(x.reshape(3,4))
+print(x.reshape(2, -1))     # -1 means "figure this dimension out automatically"
+
+print(x.flatten())          # collapse back to 1D
+print(x.T)                  # transpose (flip rows/columns) for 2D arrays
+
+# Useful Extras
+
+print(np.concatenate([a+b]))
+print(np.vstack([a, b]))
+# print(np.hstack([a, b]))
+print(np.sort(a))
+print(np.unique(a))
+
